@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator - Step 1</title>
+    <link rel="styleheet" href="style.css">
+    <script src="sceinpt.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>GPA Calculator</h1>
+        
+        <form action="calculate.php" method="POST" onsubmit="return validateForm();">
+            
+            <div id="courses">
+                <div class="course-row">
+                    <label>Course: </label>
+                    <input type="text" name="course[]" placeholder="e.g. Mathematics" required>
+                    
+                    <label>Credits: </label>
+                    <input type="number" name="credits[]" placeholder="Hours" min="1" required>
+                    
+                    <label>Grade: </label>
+                    <select name="grade[]">
+                        <option value="4.0">A++</option>
+                        <option value="3.0">A</option>
+                        <option value="3.0">B</option>
+                        <option value="2.0">C</option>
+                        <option value="1.0">D</option>
+                        <option value="0.0">F</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button type="button" id="add-btn" onclick="addCourse()">+ Add Course</button>
+                <br><br>
+                <input type="submit" value="Calculate GPA">
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>
